@@ -95,6 +95,10 @@
         <header>
             <h1>🎯 Artifact Keeper Helm Repository</h1>
             <p>Enterprise artifact registry supporting 45+ package formats</p>
+            <div style="margin-top: 1rem;">
+                <span class="badge">Version: 0.1.0</span>
+                <span class="badge">App Version: 1.1.0</span>
+            </div>
         </header>
 
         <div class="card">
@@ -108,9 +112,29 @@ helm install my-artifact-keeper artifact-keeper/artifact-keeper</code></pre>
         <div class="card">
             <h2>Available Charts</h2>
             <ul>
-                <li><strong>artifact-keeper</strong> - Enterprise artifact registry</li>
+                <li><strong>artifact-keeper</strong> - Enterprise artifact registry supporting 45+ package formats</li>
             </ul>
             <p>View all versions in the <a href="https://github.com/artifact-keeper/artifact-keeper-iac/releases">releases page</a>.</p>
+        </div>
+
+        <div class="card">
+            <h2>Repository Index</h2>
+            <p>The Helm repository index is available at: <a href="index.yaml">index.yaml</a></p>
+        </div>
+
+        <div class="card">
+            <h2>Installation Options</h2>
+            <pre><code># Install with custom values
+helm install my-artifact-keeper artifact-keeper/artifact-keeper -f my-values.yaml
+
+# Install specific version
+helm install my-artifact-keeper artifact-keeper/artifact-keeper --version 0.1.0
+
+# Install production configuration
+helm install my-artifact-keeper artifact-keeper/artifact-keeper \\
+  --set ingress.host=artifacts.example.com \\
+  --set postgres.enabled=false \\
+  --set externalDatabase.host=your-db-host</code></pre>
         </div>
 
         <div class="card">
